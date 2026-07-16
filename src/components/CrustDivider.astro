@@ -1,0 +1,19 @@
+﻿---
+interface Props {
+  fill: string;
+  flip?: boolean;
+}
+
+const { fill, flip = false } = Astro.props;
+---
+<svg
+  class:list={["w-full h-10 block relative z-10", flip ? "-mb-9.75 rotate-180" : "-mt-9.75"]}
+  viewBox="0 0 1000 40"
+  preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M0,40 L0,20 Q30,5 60,15 T130,22 T200,10 T270,18 T340,5 T410,20 T480,8 T550,22 T620,12 T690,20 T760,5 T830,18 T900,10 T950,22 L1000,15 L1000,40 Z"
+    fill={fill}
+  />
+</svg>

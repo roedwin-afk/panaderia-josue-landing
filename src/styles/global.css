@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #FBF3E7;
+  --color-bg-alt: #F3E4D0;
+  --color-text-main: #3D2B1F;
+  --color-text-sec: #6B5240;
+  --color-brand: #7A2E2A;
+  --color-brand-dark: #5C201D;
+  --color-accent: #D9A441;
+  --color-accent-hover: #C08F30;
+  --color-border: #E4D2B8;
+
+  --font-heading: "Lora", serif;
+  --font-body: "Nunito Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
