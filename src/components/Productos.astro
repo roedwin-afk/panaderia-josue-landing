@@ -3,17 +3,17 @@ const productos = [
   {
     titulo: 'Pan Dulce y Salado',
     texto: 'El clásico de cada tarde en San Miguel. Conchas, cachitos, semitas y pan francés recién horneado con la receta de siempre.',
-    icono: 'M20 7h-2.11a4.984 4.984 0 0 0-2.82-3.87l-.76-.34a1.996 1.996 0 0 0-1.92.21l-3.23 2.15c-.24.16-.54.21-.82.14l-1.3-.32a1.002 1.002 0 0 0-1.15.54l-.44.97H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-7.6-2.12.76.34C14.07 5.63 14.7 6.27 15 7H9.86l4.54-3.02zM20 17H4V9h16v8z',
+    icono: `<path d="M4 12c0-3.5 2.5-6 6.5-7 1-.3 2-.3 3 0 4 1 6.5 3.5 6.5 7 0 2.8-1.3 4-3 4H7c-1.7 0-3-1.2-3-4z"/><path d="M8 12v4M12 11v5M16 12v4"/>`,
   },
   {
     titulo: 'Repostería y Pasteles',
     texto: 'Detalles dulces para cada ocasión. Tartas, tres leches y nuestra especialidad en repostería fina para consentir a los tuyos.',
-    icono: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v4h-2zm0 6h2v2h-2z',
+    icono: `<path d="M12 4c1.5 0 2.5 1.2 2.2 2.5-.2.8-.9 1.2-1.5 1.5h1.8c1.8 0 3 1.3 3.3 3H6.2c.3-1.7 1.5-3 3.3-3h1.8c-.6-.3-1.3-.7-1.5-1.5C9.5 5.2 10.5 4 12 4z"/><path d="M5.5 11h13l-1.2 8.3c-.1.9-.9 1.7-1.8 1.7H8.5c-.9 0-1.7-.8-1.8-1.7L5.5 11z"/>`,
   },
   {
     titulo: 'Pedidos Especiales',
     texto: 'Eventos, cumpleaños y ventas al por mayor. Preparamos grandes cantidades garantizando la misma calidad artesanal.',
-    icono: 'M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z',
+    icono: `<rect x="4" y="9" width="16" height="11" rx="1"/><path d="M4 13h16M12 9v11"/><path d="M12 9C10 9 8.5 7.5 8.5 6S9.5 4 11 4c1 0 1 2 1 5zM12 9c2 0 3.5-1.5 3.5-3S14.5 4 13 4c-1 0-1 2-1 5z"/>`,
   },
 ];
 ---
@@ -27,7 +27,7 @@ const productos = [
       {productos.map((p) => (
         <div class="bg-bg-main border border-border rounded-xl px-8 py-10 text-center hover:-translate-y-1 hover:border-brand hover:shadow-[0_12px_24px_rgba(122,46,42,0.08)] transition-all">
           <div class="w-20 h-20 mx-auto mb-6 bg-bg-alt text-brand rounded-full flex items-center justify-center">
-            <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d={p.icono}/></svg>
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={p.icono} />
           </div>
           <h3 class="text-brand font-heading text-xl mb-3">{p.titulo}</h3>
           <p class="text-text-sec">{p.texto}</p>
