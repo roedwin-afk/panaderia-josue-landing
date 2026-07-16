@@ -1,0 +1,45 @@
+---
+interface Props {
+  whatsappNumber: string;
+}
+const { whatsappNumber } = Astro.props;
+const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hola, quisiera cotizar un pedido para un evento.')}`;
+---
+<section class="bg-bg-main pt-16 pb-24">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <h1 class="text-brand font-heading text-4xl md:text-5xl mb-6 leading-tight">
+        El sabor que nos une, para tus mejores celebraciones.
+      </h1>
+      <p class="text-text-sec text-lg mb-8 max-w-md">
+        Desde nuestro horno en San Miguel hasta tu mesa. Pan fresco, repostería tradicional y pedidos especiales para eventos por mayoreo.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href={waLink} target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-bg-main font-bold rounded-lg px-6 py-3">
+          Pedidos por WhatsApp
+        </a>
+        <a href="#catalogo"
+           class="inline-flex items-center border-2 border-brand text-brand hover:bg-brand hover:text-bg-main font-bold rounded-lg px-6 py-3 transition-colors">
+          Ver productos
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="bg-bg-alt border border-border rounded-2xl p-8 shadow-[0_10px_30px_rgba(122,46,42,0.05)]">
+        <div class="flex gap-1 text-accent mb-4">
+          {[...Array(5)].map(() => (
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          ))}
+        </div>
+        <p class="font-heading text-xl italic text-text-main mb-4">
+          "El mejor pan de San Miguel. Siempre encargo para los cumpleaños de la familia y nunca nos decepcionan. Fresco y delicioso."
+        </p>
+        <p class="text-brand font-bold text-sm">— Familia Martínez, Cliente de Sucursal Kury</p>
+      </div>
+    </div>
+  </div>
+</section>

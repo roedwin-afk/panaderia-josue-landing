@@ -1,0 +1,13 @@
+---
+interface Props {
+  clientName?: string;
+}
+const { clientName = 'Panadería Josué' } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="bg-text-main text-text-sec text-center py-8">
+  <div class="max-w-6xl mx-auto px-6">
+    <p>&copy; {year} {clientName}, San Miguel. Todos los derechos reservados.</p>
+    <p class="text-xs mt-2 text-border opacity-70">Diseño de muestra creado para fines demostrativos.</p>
+  </div>
+</footer>
